@@ -121,10 +121,119 @@ main {
   margin: 0 auto;
 }
 
+.transition {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+  background: linear-gradient(180deg, rgba(10, 12, 18, 0) 0%, rgba(10, 12, 18, 0.5) 60%, rgba(10, 12, 18, 0.1) 100%);
+}
+
+.transition-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--button-ghost-border);
+  font: 700 0.85rem/1 "Space Grotesk", sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.transition-wave {
+  margin-top: 1.4rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.transition-wave svg {
+  width: 100%;
+  height: 90px;
+}
+
+.transition-wave path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
 .section h2 {
   margin: 0.4rem 0 1rem;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   letter-spacing: -0.02em;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.about-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) 1fr;
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+  align-items: start;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 1.2rem;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.about-role {
+  margin: 0;
+  color: var(--accent-green);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+}
+
+.about-quote {
+  margin: 0;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem 1.4rem;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--text-soft);
+}
+
+.info-list li span {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    text-align: left;
+  }
 }
 
 .section-text {
@@ -161,7 +270,17 @@ main {
 }
 
 .timeline-item {
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-card {
   padding: 1.2rem 1.4rem;
+  min-width: 320px;
   border-radius: 1rem;
   border: 1px solid var(--surface-border);
   background: var(--surface);
@@ -174,28 +293,14 @@ main {
   font-size: 0.9rem;
 }
 
-.journey-line {
-  position: absolute;
-  top: -0.5rem;
-  bottom: -0.5rem;
-  right: 3%;
-  width: 6px;
-  background: repeating-linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7) 12px,
-    rgba(255, 255, 255, 0.05) 12px,
-    rgba(255, 255, 255, 0.05) 24px
-  );
-  border-radius: 999px;
-  filter: blur(0.2px);
-  opacity: 0.6;
-}
-
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.2rem;
+}
+
+#formacao .grid-2 + .card {
+  margin-top: 1.6rem;
 }
 
 .card {
@@ -204,6 +309,12 @@ main {
   border: 1px solid var(--surface-border);
   background: var(--surface);
   box-shadow: var(--shadow);
+}
+
+#formacao .card + .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .list {
@@ -452,6 +563,19 @@ html[data-theme="dark"] .hero {
   .panel {
     margin: 0;
   }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-item:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .timeline-item:nth-child(even) .timeline-card {
+    order: 1;
+  }
+
 }
 
 @media (min-width: 901px) {

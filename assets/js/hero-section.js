@@ -12,6 +12,7 @@
     const typedSubtitleBottom = mount.querySelector("#typedSubtitleBottom");
     const caretTop = mount.querySelector("#caretTop");
     const caretBottom = mount.querySelector("#caretBottom");
+    const autoAge = document.getElementById("autoAge");
     const worldContainer = mount.querySelector(".world");
     const fragmentShaderScript = mount.querySelector("#fragmentShader");
     const vertexShaderScript = mount.querySelector("#vertexShader");
@@ -133,16 +134,32 @@
     const i18n = {
       pt: {
         "nav.home": "Inicio",
+        "nav.about": "Sobre",
         "nav.summary": "Resumo",
         "nav.journey": "Trajetoria",
         "nav.education": "Formacao",
         "nav.projects": "Projetos",
         "nav.contact": "Contato",
+        "personalResume.title": "Resumo Pessoal",
         "hero.subtitle.top": "I'm Frontend Developer",
         "hero.subtitle.bottom": "& Designer UI/UX",
         "resume.eyebrow": "Resumo Profissional",
         "resume.title": "Resumo Profissional",
         "resume.body": "Desenvolvedor Front-end Pleno e UI/UX Designer com experiencia no desenvolvimento de aplicacoes web e mobile, atuando desde a concepcao da interface ate a implementacao tecnica. Forte atuacao com React.js, Vue.js, TypeScript e React Native, com foco em arquitetura baseada em componentes, performance e acessibilidade. Vivencia em ambientes ageis, integracao com APIs RESTful e colaboracao com times multidisciplinares para entrega de solucoes centradas no usuario.",
+        "about.role": "Web Artisan & UI/UX Designer",
+        "about.quote": "\"Be the change that you want to see in the world.\"",
+        "about.birthday.label": "Birthday:",
+        "about.birthday.value": "30 Oct",
+        "about.phone.label": "Phone:",
+        "about.phone.value": "+55 82 99138 1414",
+        "about.city.label": "City:",
+        "about.city.value": "Maceio, Brazil",
+        "about.age.label": "Age:",
+        "about.age.value": "25",
+        "about.degree.label": "Degree:",
+        "about.degree.value": "Pleno",
+        "about.email.label": "Email:",
+        "about.email.value": "contatojmendonca@gmail.com",
         "journey.eyebrow": "Trajetoria",
         "journey.title": "Experiencia Profissional",
         "journey.agill.title": "Agill — Desenvolvedor Front-end",
@@ -175,6 +192,9 @@
         "projects.eyebrow": "Projetos",
         "projects.title": "Portfolio em Progresso",
         "projects.body": "Estou preparando meus projetos para publicacao. Enquanto isso, este espaco destaca as tecnologias que utilizo com mais frequencia.",
+        "transition.about": "Sobre",
+        "personalResume.title": "Resumo Pessoal",
+        "about.body": "Sou uma pessoa em constante evolucao, aprendo com facilidade e gosto de colaborar com o time para construir relacoes positivas e resultados solidos.",
         "contact.eyebrow": "Contato",
         "contact.title": "Vamos Conversar",
         "contact.location.title": "Localizacao",
@@ -184,6 +204,7 @@
       },
       en: {
         "nav.home": "Home",
+        "nav.about": "About",
         "nav.summary": "Summary",
         "nav.journey": "Journey",
         "nav.education": "Education",
@@ -194,6 +215,20 @@
         "resume.eyebrow": "Professional Summary",
         "resume.title": "Professional Summary",
         "resume.body": "Mid-level Front-end Developer and UI/UX Designer with experience building web and mobile applications, from interface conception to technical implementation. Strong work with React.js, Vue.js, TypeScript, and React Native, focusing on component-based architecture, performance, and accessibility. Experience in agile environments, RESTful API integration, and collaboration with multidisciplinary teams to deliver user-centered solutions.",
+        "about.role": "Web Artisan & UI/UX Designer",
+        "about.quote": "\"Be the change that you want to see in the world.\"",
+        "about.birthday.label": "Birthday:",
+        "about.birthday.value": "30 Oct",
+        "about.phone.label": "Phone:",
+        "about.phone.value": "+55 82 99138 1414",
+        "about.city.label": "City:",
+        "about.city.value": "Maceio, Brazil",
+        "about.age.label": "Age:",
+        "about.age.value": "25",
+        "about.degree.label": "Degree:",
+        "about.degree.value": "Pleno",
+        "about.email.label": "Email:",
+        "about.email.value": "contatojmendonca@gmail.com",
         "journey.eyebrow": "Journey",
         "journey.title": "Professional Experience",
         "journey.agill.title": "Agill — Front-end Developer",
@@ -226,6 +261,9 @@
         "projects.eyebrow": "Projects",
         "projects.title": "Portfolio In Progress",
         "projects.body": "I'm preparing my projects for publication. For now, this section highlights the technologies I use most often.",
+        "transition.about": "About",
+        "personalResume.title": "Personal Resume",
+        "about.body": "I'm a person in constant evolution, I learn fast and enjoy collaborating with the team to build positive relationships and solid results.",
         "contact.eyebrow": "Contact",
         "contact.title": "Let's Talk",
         "contact.location.title": "Location",
@@ -247,6 +285,18 @@
       if (typedSubtitleBottom) typedSubtitleBottom.dataset.text = dict["hero.subtitle.bottom"];
     }
 
+    function computeAge() {
+      const today = new Date();
+      const birth = new Date(1998, 9, 30);
+      let age = today.getFullYear() - birth.getFullYear();
+      const beforeBirthday =
+        today.getMonth() < birth.getMonth() ||
+        (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate());
+      if (beforeBirthday) age -= 1;
+      if (autoAge) autoAge.textContent = String(age);
+      return age;
+    }
+
     function setLang(next) {
       root.dataset.lang = next;
       localStorage.setItem("lang", next);
@@ -255,6 +305,7 @@
         langLabel.textContent = next === "en" ? "EN" : "PT";
       }
       applyI18n(next);
+      computeAge();
       startTypingAnimation();
     }
 
@@ -391,6 +442,7 @@
     }
 
     initTheme();
+    computeAge();
     setLang(localStorage.getItem("lang") || "pt");
     initWorld();
     startTypingAnimation();

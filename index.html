@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -12,23 +12,43 @@
 <body>
   <div id="heroMount"></div>
 
+  <section id="transicao" class="section transition">
+    <div class="section-inner">
+      
+    </div>
+  </section>
+
   <main>
-    <section id="resumo" class="section">
+    <section id="about" class="section">
       <div class="section-inner">
-        <p class="eyebrow" data-i18n="resume.eyebrow">Resumo Profissional</p>
-        <h2 data-i18n="resume.title">Resumo Profissional</h2>
-        <p class="section-text" data-i18n="resume.body">
-          Desenvolvedor Front-end Pleno e UI/UX Designer com experiencia no desenvolvimento de aplicacoes web e mobile, atuando
-          desde a concepcao da interface ate a implementacao tecnica. Forte atuacao com React.js, Vue.js, TypeScript e React Native,
-          com foco em arquitetura baseada em componentes, performance e acessibilidade. Vivencia em ambientes ageis, integracao com
-          APIs RESTful e colaboracao com times multidisciplinares para entrega de solucoes centradas no usuario.
-        </p>
-        <div class="pill-row">
-          <span class="pill">React</span>
-          <span class="pill">Vue</span>
-          <span class="pill">TypeScript</span>
-          <span class="pill">React Native</span>
-          <span class="pill">UI/UX</span>
+        <div class="transition-badge" data-i18n="transition.about">About</div>
+        <h2 class="section-title" data-i18n="personalResume.title">Personal Resume</h2>
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="./assets/img/profile-img.jpg" alt="Foto de perfil de Joao A. M. Neto">
+          </div>
+          <div class="about-content">
+            <h3 class="about-role" data-i18n="about.role">Web Artisan &amp; UI/UX Designer</h3>
+            <p class="about-quote" data-i18n="about.quote">"Be the change that you want to see in the world."</p>
+            <div class="about-info">
+              <ul class="info-list">
+                <li><span data-i18n="about.birthday.label">Birthday:</span> <strong data-i18n="about.birthday.value">30 Oct</strong></li>
+                <li><span data-i18n="about.phone.label">Phone:</span> <strong data-i18n="about.phone.value">+55 82 99138 1414</strong></li>
+                <li><span data-i18n="about.city.label">City:</span> <strong data-i18n="about.city.value">Maceio, Brazil</strong></li>
+              </ul>
+              <ul class="info-list">
+                <li><span data-i18n="about.age.label">Age:</span> <strong id="autoAge" data-i18n="about.age.value">27</strong></li>
+                <li><span data-i18n="about.degree.label">Degree:</span> <strong data-i18n="about.degree.value">Pleno</strong></li>
+                <li><span data-i18n="about.email.label">Email:</span> <strong data-i18n="about.email.value">contatojmendonca@gmail.com</strong></li>
+              </ul>
+            </div>
+            <p class="section-text" data-i18n="resume.body">
+              Desenvolvedor Front-end Pleno e UI/UX Designer com experiencia no desenvolvimento de aplicacoes web e mobile, atuando
+              desde a concepcao da interface ate a implementacao tecnica. Forte atuacao com React.js, Vue.js, TypeScript e React Native,
+              com foco em arquitetura baseada em componentes, performance e acessibilidade. Vivencia em ambientes ageis, integracao com
+              APIs RESTful e colaboracao com times multidisciplinares para entrega de solucoes centradas no usuario.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -38,44 +58,50 @@
         <p class="eyebrow" data-i18n="journey.eyebrow">Trajetoria</p>
         <h2 data-i18n="journey.title">Experiencia Profissional</h2>
         <div class="journey-line" aria-hidden="true"></div>
-        <div class="timeline">
+                <div class="timeline">
           <article class="timeline-item">
-            <h3 data-i18n="journey.agill.title">Agill — Desenvolvedor Front-end</h3>
-            <p class="timeline-meta" data-i18n="journey.agill.meta">Ago/2024 - Nov/2025 · Presencial · Maceio/AL</p>
-            <p class="section-text" data-i18n="journey.agill.body">
-              Desenvolvimento, evolucao e manutencao de interfaces web com Vue.js, JavaScript e TypeScript. Decisoes tecnicas de
-              arquitetura de componentes, modernizacao de sistemas internos, melhoria de performance e UX. Integracao com APIs
-              RESTful e trabalho em ambiente agil (Scrum) com designers e back-end.
-            </p>
+            <div class="timeline-card">
+              <h3 data-i18n="journey.agill.title">Agill - Desenvolvedor Front-end</h3>
+              <p class="timeline-meta" data-i18n="journey.agill.meta">Ago/2024 - Nov/2025 · Presencial · Maceio/AL</p>
+              <p class="section-text" data-i18n="journey.agill.body">
+                Desenvolvimento, evolucao e manutencao de interfaces web com Vue.js, JavaScript e TypeScript. Decisoes tecnicas de
+                arquitetura de componentes, modernizacao de sistemas internos, melhoria de performance e UX. Integracao com APIs
+                RESTful e trabalho em ambiente agil (Scrum) com designers e back-end.
+              </p>
+            </div>
           </article>
           <article class="timeline-item">
-            <h3 data-i18n="journey.daily.title">Daily Grind — Mobile Full Stack Project (Projeto Proprio)</h3>
-            <p class="timeline-meta" data-i18n="journey.daily.meta">Dez/2025 - Jan/2026 · Remoto · Maceio/AL</p>
-            <p class="section-text" data-i18n="journey.daily.body">
-              Idealizacao e desenvolvimento de app mobile de produtividade com React Native. Definicao de arquitetura, criacao de
-              interfaces e funcionalidades. Prototipacao no Figma, principios de UX/UI, integracao com servicos back-end e
-              versionamento com Git.
-            </p>
+            <div class="timeline-card">
+              <h3 data-i18n="journey.daily.title">Daily Grind - Mobile Full Stack Project (Projeto Proprio)</h3>
+              <p class="timeline-meta" data-i18n="journey.daily.meta">Dez/2025 - Jan/2026 · Remoto · Maceio/AL</p>
+              <p class="section-text" data-i18n="journey.daily.body">
+                Idealizacao e desenvolvimento de app mobile de produtividade com React Native. Definicao de arquitetura, criacao de
+                interfaces e funcionalidades. Prototipacao no Figma, principios de UX/UI, integracao com servicos back-end e
+                versionamento com Git.
+              </p>
+            </div>
           </article>
           <article class="timeline-item">
-            <h3 data-i18n="journey.freelance.title">Freelancer — Desenvolvedor Front-end</h3>
-            <p class="timeline-meta" data-i18n="journey.freelance.meta">Abr/2023 - Jun/2023 · Remoto · Maceio/AL</p>
-            <p class="section-text" data-i18n="journey.freelance.body">
-              Interfaces responsivas com HTML5, CSS3 e JavaScript. Definicao visual e organizacao de layouts. Integracao com Laravel
-              via APIs RESTful e boas praticas de acessibilidade e compatibilidade cross-browser.
-            </p>
+            <div class="timeline-card">
+              <h3 data-i18n="journey.freelance.title">Freelancer - Desenvolvedor Front-end</h3>
+              <p class="timeline-meta" data-i18n="journey.freelance.meta">Abr/2023 - Jun/2023 · Remoto · Maceio/AL</p>
+              <p class="section-text" data-i18n="journey.freelance.body">
+                Interfaces responsivas com HTML5, CSS3 e JavaScript. Definicao visual e organizacao de layouts. Integracao com Laravel
+                via APIs RESTful e boas praticas de acessibilidade e compatibilidade cross-browser.
+              </p>
+            </div>
           </article>
           <article class="timeline-item">
-            <h3 data-i18n="journey.defesa.title">Defesa Civil de Maceio — Desenvolvedor Full-stack</h3>
-            <p class="timeline-meta" data-i18n="journey.defesa.meta">Mar/2021 - Nov/2021 · Presencial · Maceio/AL</p>
-            <p class="section-text" data-i18n="journey.defesa.body">
-              Desenvolvimento e manutencao de sistemas internos com Laravel, atuando no front-end e em ajustes de usabilidade e
-              layout. Correcao de funcionalidades e melhoria da experiencia dos usuarios internos.
-            </p>
+            <div class="timeline-card">
+              <h3 data-i18n="journey.defesa.title">Defesa Civil de Maceio - Desenvolvedor Full-stack</h3>
+              <p class="timeline-meta" data-i18n="journey.defesa.meta">Mar/2021 - Nov/2021 · Presencial · Maceio/AL</p>
+              <p class="section-text" data-i18n="journey.defesa.body">
+                Desenvolvimento e manutencao de sistemas internos com Laravel, atuando no front-end e em ajustes de usabilidade e
+                layout. Correcao de funcionalidades e melhoria da experiencia dos usuarios internos.
+              </p>
+            </div>
           </article>
-        </div>
-      </div>
-    </section>
+        </div>      </div>\n    </section>
 
     <section id="formacao" class="section">
       <div class="section-inner">
@@ -83,8 +109,8 @@
         <h2 data-i18n="education.title">Formacao Academica e Certificados</h2>
         <div class="grid-2">
           <div class="card">
-            <h3 data-i18n="education.degree">Bacharelado em Sistemas da Informacao — CESMAC</h3>
-            <p class="timeline-meta" data-i18n="education.degree.meta">Conclusao: 2024 · Maceio/AL</p>
+            <h3 data-i18n="education.degree">Bacharelado em Sistemas da Informacao â€” CESMAC</h3>
+            <p class="timeline-meta" data-i18n="education.degree.meta">Conclusao: 2024 Â· Maceio/AL</p>
             <p class="section-text" data-i18n="education.degree.body">
               Formacao focada em desenvolvimento de software, bancos de dados, engenharia de requisitos e gestao de projetos.
             </p>
@@ -93,7 +119,7 @@
             <h3 data-i18n="education.languages.title">Idiomas</h3>
             <ul class="list">
               <li data-i18n="education.languages.pt">Portugues (Nativo)</li>
-              <li data-i18n="education.languages.en">English — Intermediate (Technical Reading and Documentation)</li>
+              <li data-i18n="education.languages.en">English â€” Intermediate (Technical Reading and Documentation)</li>
               <li data-i18n="education.languages.es">Espanhol (Tecnico)</li>
             </ul>
           </div>
@@ -101,11 +127,11 @@
         <div class="card">
           <h3 data-i18n="education.certs.title">Certificados</h3>
           <ul class="list list-2">
-            <li data-i18n="education.certs.front">Formacao Front-end — Udemy — 2024</li>
-            <li data-i18n="education.certs.vue">Desenvolvimento Web Avancado com Vue.js — Udemy — 2024</li>
-            <li data-i18n="education.certs.laravel">Laravel 5.8 — Udemy — 2024</li>
-            <li data-i18n="education.certs.uiux">UI/UX Designer com Figma — Udemy — 2024</li>
-            <li data-i18n="education.certs.rn">React Native — Udemy — 2024</li>
+            <li data-i18n="education.certs.front">Formacao Front-end â€” Udemy â€” 2024</li>
+            <li data-i18n="education.certs.vue">Desenvolvimento Web Avancado com Vue.js â€” Udemy â€” 2024</li>
+            <li data-i18n="education.certs.laravel">Laravel 5.8 â€” Udemy â€” 2024</li>
+            <li data-i18n="education.certs.uiux">UI/UX Designer com Figma â€” Udemy â€” 2024</li>
+            <li data-i18n="education.certs.rn">React Native â€” Udemy â€” 2024</li>
           </ul>
         </div>
       </div>
@@ -140,7 +166,7 @@
           </div>
           <div class="card">
             <h3 data-i18n="contact.phone.title">Telefone</h3>
-            <p class="section-text">(82) 991381414</p>
+            <p class="section-text">+55 (82) 991381414</p>
           </div>
           <div class="card">
             <h3>Email</h3>
@@ -149,8 +175,8 @@
           <div class="card">
             <h3 data-i18n="contact.links.title">Links</h3>
             <p class="section-text">
-              <a class="link" href="https://www.linkedin.com/in/jaoneto/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <span class="sep">•</span>
+              <a class="link" href="https://www.linkedin.com/in/jaoneto/" target="_blank" rel="noreferrer">Linkedin</a>
+              <span class="sep"></span>
               <a class="link" href="https://github.com/jaoneto-rg" target="_blank" rel="noreferrer">GitHub</a>
             </p>
           </div>
