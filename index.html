@@ -12,12 +12,6 @@
 <body>
   <div id="heroMount"></div>
 
-  <section id="transicao" class="section transition">
-    <div class="section-inner">
-      
-    </div>
-  </section>
-
   <main>
     <section id="about" class="section">
       <div class="section-inner">
@@ -55,7 +49,7 @@
 
     <section id="trajetoria" class="section">
       <div class="section-inner">
-        <p class="eyebrow" data-i18n="journey.eyebrow">Trajetoria</p>
+        <div class="transition-badge" data-i18n="journey.eyebrow">Trajetoria</div>
         <h2 data-i18n="journey.title">Experiencia Profissional</h2>
         <div class="journey-line" aria-hidden="true"></div>
                 <div class="timeline">
@@ -101,11 +95,13 @@
               </p>
             </div>
           </article>
-        </div>      </div>\n    </section>
+        </div>      
+      </div>    
+    </section>
 
     <section id="formacao" class="section">
       <div class="section-inner">
-        <p class="eyebrow" data-i18n="education.eyebrow">Formacao</p>
+        <div class="transition-badge" data-i18n="education.eyebrow">Formacao</div>
         <h2 data-i18n="education.title">Formacao Academica e Certificados</h2>
         <div class="grid-2">
           <div class="card">
@@ -139,7 +135,7 @@
 
     <section id="projetos" class="section">
       <div class="section-inner">
-        <p class="eyebrow" data-i18n="projects.eyebrow">Projetos</p>
+        <div class="transition-badge" data-i18n="projects.eyebrow">Projetos</div>
         <h2 data-i18n="projects.title">Portfolio em Progresso</h2>
         <p class="section-text" data-i18n="projects.body">
           Estou preparando meus projetos para publicacao. Enquanto isso, este espaco destaca as tecnologias que utilizo com mais
@@ -157,7 +153,7 @@
 
     <section id="contato" class="section">
       <div class="section-inner">
-        <p class="eyebrow" data-i18n="contact.eyebrow">Contato</p>
+        <div class="transition-badge" data-i18n="contact.eyebrow">Contato</div>
         <h2 data-i18n="contact.title">Vamos Conversar</h2>
         <div class="contact-grid">
           <div class="card">
@@ -185,6 +181,19 @@
     </section>
   </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bar">
+        <p class="footer-copy">© 2026 Joao A. M. Neto. All rights reserved.</p>
+        <div class="footer-links">
+          <a class="link" href="https://www.linkedin.com/in/jaoneto/" target="_blank" rel="noreferrer">Linkedin</a>
+          <a class="link" href="https://github.com/jaoneto-rg" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="link" href="mailto:contatojmendonca@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
   <script src="./assets/js/hero-section.js"></script>
   <script>
@@ -203,4 +212,3 @@
   </script>
 </body>
 </html>
-

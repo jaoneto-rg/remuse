@@ -65,6 +65,11 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+html[data-theme="light"] .topbar {
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .topbar-inner {
   width: min(100%, var(--max-width));
   margin: 0 auto;
@@ -345,6 +350,65 @@ main {
 .sep {
   margin: 0 0.5rem;
   color: var(--text-soft);
+}
+
+.footer {
+  padding: 2.4rem 1.2rem 2.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 10, 14, 0.7);
+}
+
+html[data-theme="light"] .footer {
+  background: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-inner {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  display: grid;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-name {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.footer-text {
+  margin: 0.35rem 0 0;
+  color: var(--text-soft);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-bar {
+    grid-column: 1 / -1;
+  }
 }
 
 html[data-theme="dark"] .hero {
