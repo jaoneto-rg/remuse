@@ -12,7 +12,7 @@
   --button-ghost-text: #11131a;
   --button-ghost-border: rgba(17, 19, 26, 0.25);
   --dot: #11131a;
-  --accent-green: #26f13f;
+  --accent-green: #0b6b3a;
   --shadow: 0 20px 46px rgba(7, 9, 16, 0.16);
   --max-width: 1180px;
 }
@@ -500,7 +500,7 @@ html[data-theme="dark"] .hero {
   color: var(--accent-green);
   font-family: "Space Grotesk", sans-serif;
   min-height: 1.4em;
-  text-shadow: 0 0 12px rgba(38, 241, 63, 0.3);
+  text-shadow: 0 0 12px rgba(11, 107, 58, 0.26);
 }
 
 .subtitle-line,
