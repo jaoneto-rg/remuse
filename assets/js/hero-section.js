@@ -3,11 +3,14 @@
     const mount = scope || document;
     const root = document.documentElement;
     const hero = mount.querySelector("#hero");
+    const topbar = mount.querySelector(".topbar");
     const themeToggle = mount.querySelector("#themeToggle");
     const themeLabel = mount.querySelector("#themeLabel");
     const themeIcon = mount.querySelector("#themeIcon");
+    const waveToggle = mount.querySelector("#waveToggle");
     const langToggle = mount.querySelector("#langToggle");
     const langLabel = mount.querySelector("#langLabel");
+    const menuToggle = mount.querySelector("#menuToggle");
     const typedSubtitleTop = mount.querySelector("#typedSubtitleTop");
     const typedSubtitleBottom = mount.querySelector("#typedSubtitleBottom");
     const caretTop = mount.querySelector("#caretTop");
@@ -198,9 +201,9 @@
         "contact.location.title": "Localização",
         "contact.location.body": "Brasil - Maceio / AL",
         "contact.phone.title": "Telefone",
-        "contact.links.title": "Links"
-        ,
-        "footer.tagline": "Frontend Developer & UI/UX Designer"
+        "contact.links.title": "Links",
+        "footer.tagline": "Frontend Developer & UI/UX Designer",
+        "waves.label": "Ondas"
       },
       en: {
         "nav.home": "Home",
@@ -269,7 +272,8 @@
         "contact.location.body": "Maceio / AL",
         "contact.phone.title": "Phone",
         "contact.links.title": "Links",
-        "footer.tagline": "Frontend Developer & UI/UX Designer"
+        "footer.tagline": "Frontend Developer & UI/UX Designer",
+        "waves.label": "Waves"
       }
     };
 
@@ -354,6 +358,21 @@
       themeToggle.addEventListener("click", function () {
         const next = currentTheme() === "dark" ? "light" : "dark";
         setTheme(next);
+      });
+    }
+
+    if (menuToggle && topbar) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = topbar.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    if (waveToggle) {
+      waveToggle.addEventListener("click", function () {
+        const list = atmospheres[currentTheme()];
+        moodIndex = (moodIndex + 1) % list.length;
+        if (world) world.applyParameters(list[moodIndex]);
       });
     }
 
