@@ -363,15 +363,39 @@ main {
   margin-top: 0.9rem;
 }
 
+.project-links {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 0.85rem;
   font: 700 0.85rem/1 "Space Grotesk", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-main);
   text-decoration: none;
+  border: 1px solid var(--button-border);
+  background: rgba(255,255,255,0.18);
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.55rem;
+  transition: all 150ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  background: rgba(255,255,255,0.32);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.project-link--github {
+  border-color: var(--button-border);
+  color: var(--text-main);
+  background: rgba(255,255,255,0.18);
 }
 
 .projects-carousel.is-dragging {
